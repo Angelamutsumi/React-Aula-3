@@ -1,21 +1,28 @@
 import React from 'react';
 
-    function FormInput(props) {
-        const {
-            name, label,type,placeholder,value, onChangeInput
-        } = props;
-
-        const onChangeFuntion = (event) => {
+   export const FormInput = ({
+        name, 
+        label, 
+        type, 
+        placeholder, 
+        value, 
+        onChangeInput
+        }) => {
+        const onChangeFunction = (event) => {
             onChangeInput(event.target.name, event.target.value)
         }
 
-        return <div>
-                <label>{label}</label><br/>
-                <input name={name} type={type} placeholder={placeholder} value={value} onChange={onChangeFuntion}/>
-            </div>
+        return <div className = "form-input-container">
+            <label>{label}</label><br/>
+            <input
+                    name={name} 
+                    type={type} 
+                    placeholder={placeholder} 
+                    value={value} 
+                    onChange={onChangeFunction}>
+            </input>
+        </div>
     }
-
-    export default FormInput;
     
     
     
